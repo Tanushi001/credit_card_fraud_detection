@@ -1,4 +1,4 @@
-# credit_card_fraud_detection
+# LegitX: credit_card_fraud_detection
 ## Overview
 This project is a machine learning pipeline for detecting fraudulent credit card transactions. Using various machine learning techniques and models, it aims to classify transactions as either legitimate or fraudulent based on features like transaction type, amount, and other factors.
 ## Prerequisites
