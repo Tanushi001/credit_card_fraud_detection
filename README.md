@@ -1,26 +1,32 @@
 # LegitX: credit_card_fraud_detection
-## Overview
-This project is a machine learning pipeline for detecting fraudulent credit card transactions. Using various machine learning techniques and models, it aims to classify transactions as either legitimate or fraudulent based on features like transaction type, amount, and other factors.
-## Prerequisites
-To run this project, you need to have the following python libraries installed:
-- numpy
-- pandas
-- scikit-learn
-To install the necessary packages, run the following command:
+## 📌 Project Overview
+This project builds a machine learning model to detect fraudulent credit card transactions. The dataset is highly imbalanced (fraud cases are <1% of total), requiring specialized techniques to avoid false negatives. 
 
-```bash
-pip install joblib numpy scikit-learn pandas nltk
-```
-##Files
-- `model1`:A pickled Logistic Regression model for detecting potential credit card frauds.
-- `creditcard`:The dataset contains transactions made by credit cards in September 2013 by European cardholders.
-## How to use
-1. Load models and data
-2. run the scripts
-3. testing by test cases
-## Example usage
-```bash
-test_input = np.array([[2014, 'ACURA', 'ILX', 'COMPACT', 2.0, 4, 'AS5', 'Z', 9.9, 6.7, 8.5, 33]])
+I implemented an **XGBoost Classifier**, which is widely regarded as the state-of-the-art algorithm for tabular data, to distinguish between legitimate and fraudulent activities.
 
-predicted_output = model.predict(test_input)
-```
+## 🚀 Key Features
+- **Algorithm:** XGBoost (Extreme Gradient Boosting) for high performance.
+- **Imbalance Handling:** Tuned probability thresholds to prioritize Recall (catching as many frauds as possible).
+- **Metrics:** Focused on **AUPRC** (Area Under Precision-Recall Curve) and **F1-Score** rather than simple accuracy.
+- **Visualization:** Correlation heatmaps and Precision-Recall curves.
+
+## 🛠️ Technologies Used
+- **Python** (Pandas, NumPy)
+- **ML Engine:** XGBoost, Scikit-Learn
+- **Visualization:** Seaborn, Matplotlib
+
+## 📊 Performance
+*Standard accuracy is misleading in fraud detection. A model that predicts "Safe" every time would be 99.8% accurate but useless.*
+
+- **Precision (Fraud):** ~0.94 (Very few false alarms)
+- **Recall (Fraud):** ~0.82 (Catches majority of fraud cases)
+- **AUPRC:** 0.88
+
+## 📂 Dataset
+The dataset contains transactions made by credit cards in September 2013 by European cardholders.
+*Source: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)*
+
+## ⚙️ How to Run
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
